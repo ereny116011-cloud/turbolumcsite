@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboluMC - Resmi Web Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome İkonları için -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Üst Menü (Navbar) -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-cube"></i> TurboluMC
+        </div>
+        <ul class="nav-links">
+            <li><a href="#anasayfa">Anasayfa</a></li>
+            <li><a href="#ozellikler">Özellikler</a></li>
+            <li><a href="#durum">Sunucu Durumu</a></li>
+        </ul>
+    </nav>
+
+    <!-- Giriş Alanı (Hero Section) -->
+    <header id="anasayfa" class="hero">
+        <div class="hero-content">
+            <h1>TurboluMC Dünyasına Hoş Geldiniz!</h1>
+            <p>Kesintisiz macera, harika topluluk ve eğlence dolu anlar seni bekliyor.</p>
+            <div class="ip-box" onclick="kopyalaIP()">
+                <span id="server-ip">turbolumc.aternos.me</span>
+                <button class="copy-btn"><i class="fa-regular fa-copy"></i> Kopyala</button>
+            </div>
+            <p class="click-info">IP adresine tıklayarak kopyalayabilirsin!</p>
+        </div>
+    </header>
+
+    <!-- Özellikler Bölümü -->
+    <section id="ozellikler" class="features">
+        <h2>Neden Biz?</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <i class="fa-solid fa-bolt icon"></i>
+                <h3>Yüksek Performans</h3>
+                <p>Gelişmiş optimizasyonlar sayesinde donma ve lag olmadan akıcı bir oyun deneyimi sunuyoruz.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-shield-halved icon"></i>
+                <h3>Adil Oyun</h3>
+                <p>Hileye ve adaletsizliğe yer yok. Herkesin eşit şartlarda eğlendiği güvenli bir ortam.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-users icon"></i>
+                <h3>Harika Topluluk</h3>
+                <p>Saygılı oyuncular ve her an yardıma hazır aktif bir yönetim ekibi burada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sunucu Canlı Durum Bölümü -->
+    <section id="durum" class="status-section">
+        <h2>Anlık Sunucu Durumu</h2>
+        <div class="status-card">
+            <div class="status-info">
+                <p><strong>Durum:</strong> <span id="online-durum"><i class="fa-solid fa-circle-notch fa-spin"></i> Kontrol ediliyor...</span></p>
+                <p><strong>Çevrimiçi Oyuncular:</strong> <span id="oyuncu-sayisi">- / -</span></p>
+                <p><strong>Sürüm:</strong> <span id="sunucu-surum">-</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alt Kısım (Footer) -->
+    <footer class="footer">
+        <p>&copy; 2026 Eren Yılmaz - TurboluMC. Tüm Hakları Saklıdır.</p>
+        <p class="license-text">Bu proje GNU General Public License v3.0 ile korunmaktadır.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
