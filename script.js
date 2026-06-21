@@ -1,5 +1,5 @@
 // Sunucu IP Adresi
-const sunucuIP = "turbolumc.aternos.me";
+const sunucuIP = "turbolu.mcsh.io";
 
 // IP Kopyalama Fonksiyonu
 function kopyalaIP() {
