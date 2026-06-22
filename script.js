@@ -1,4 +1,4 @@
-// Sunucu IP Adresi
+// Yeni Güncel Sunucu IP Adresi
 const sunucuIP = "turbolu.mcsh.io";
 
 // IP Kopyalama Fonksiyonu
@@ -18,13 +18,12 @@ function kopyalaIP() {
     });
 }
 
-// Aternos Sunucu Durumunu API ile Çekme
+// Yeni IP Adresine Göre Oyuncu Durumunu Çekme
 function sunucuDurumuGuncelle() {
     const durumYazi = document.getElementById('online-durum');
     const oyuncuYazi = document.getElementById('oyuncu-sayisi');
     const surumYazi = document.getElementById('sunucu-surum');
 
-    // Ücretsiz Minecraft API'sini kullanarak sunucu bilgilerini alıyoruz
     fetch(`https://api.mcsrvstat.us/2/${sunucuIP}`)
         .then(response => response.json())
         .then(data => {
@@ -47,6 +46,6 @@ function sunucuDurumuGuncelle() {
 // Sayfa açıldığında durumu kontrol et
 document.addEventListener('DOMContentLoaded', () => {
     sunucuDurumuGuncelle();
-    // Her 30 saniyede bir sunucu durumunu otomatik yenile
+    // Her 30 saniyede bir otomatik yenile
     setInterval(sunucuDurumuGuncelle, 30000);
 });
