@@ -1,10 +1,10 @@
 // ==========================================
 // TURBOLUMC SİSTEM AYARLARI
 // ==========================================
-const sunucuIP = "turbolular.mcsh.io";
-const bStatsServerUUID = "47f91aad-f190-4f70-b138-a0a6392ef0bc"; // Panelindeki kodun
+const sunucuIP = "turbolu.mcsh.io";
+const bStatsServerUUID = "47f91aad-f190-4f70-b138-a0a6392ef0bc";
 
-// 1. IP KOPYALAMA FONKSİYONU (Eski Buton Animasyonlu)
+// 1. IP KOPYALAMA FONKSİYONU
 function kopyalaIP() {
     navigator.clipboard.writeText(sunucuIP).then(() => {
         const btn = document.querySelector('.copy-btn');
@@ -20,7 +20,7 @@ function kopyalaIP() {
     }).catch(err => console.error('IP Kopyalanamadı:', err));
 }
 
-// 2. PORT GEREKTİRMEYEN GENEL DURUM API'Sİ
+// 2. PORT GEREKTİRMEYEN DURUM API FONKSİYONU
 function sunucuDurumuGuncelle() {
     const durumYazi = document.getElementById('online-durum');
     const oyuncuYazi = document.getElementById('oyuncu-sayisi');
@@ -51,14 +51,14 @@ function sunucuDurumuGuncelle() {
         });
 }
 
-// 3. TETİKLEYİCİLER
+// 3. SİSTEM TETİKLEYİCİLERİ
 document.addEventListener('DOMContentLoaded', () => {
     // bStats Konsol Doğrulaması
     console.log("bStats Köprüsü Kuruldu. UUID: " + bStatsServerUUID);
 
-    // İlk verileri çek
+    // İlk açılışta verileri getir
     sunucuDurumuGuncelle();
     
-    // Her 30 saniyede bir arkada sessizce yenile
+    // Her 30 saniyede bir arkada otomatik yenileme yap
     setInterval(sunucuDurumuGuncelle, 30000);
 });
