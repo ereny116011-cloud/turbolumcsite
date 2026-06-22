@@ -74,4 +74,122 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.2
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover {
+            background: #15803d;
+            transform: translateY(-1px);
+        }
+        .grid-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .info-card {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+        .info-card h3 {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .info-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+        .bstats-full-card {
+            background: linear-gradient(145deg, rgba(22, 163, 74, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .bstats-full-card h3 {
+            color: #4ade80;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .bstats-full-card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .bstats-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            background: rgba(22, 163, 74, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.4);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .bstats-link-btn:hover {
+            background: #16a34a;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 500px) {
+            .grid-panel { grid-template-columns: 1fr; }
+            .wrapper { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>TurboluMC</h1>
+    <div class="subtitle">Resmi Sunucu Durum Paneli</div>
+
+    <div class="ip-container">
+        <span class="ip-text" id="sunucu-ip-text">turbolu.mcsh.io</span>
+        <button class="copy-btn" onclick="kopyalaIP()">
+            <i class="fa-regular fa-copy"></i> Kopyala
+        </button>
+    </div>
+
+    <div class="grid-panel">
+        <div class="info-card">
+            <h3>Sunucu Durumu</h3>
+            <div class="info-value" id="online-durum" style="color: #64748b;">Yükleniyor...</div>
+        </div>
+        <div class="info-card">
+            <h3>Aktif Oyuncular</h3>
+            <div class="info-value" id="oyuncu-sayisi" style="color: #4ade80;">0 / 0</div>
+        </div>
+    </div>
+
+    <div class="bstats-full-card">
+        <h3><i class="fa-solid fa-chart-line"></i> bStats Canlı Köprüsü</h3>
+        <p>Sunucunun arka plan verileri, yüklü eklenti istatistikleri ve küresel Java metrikleri eşleşen UUID kimliği ile bStats ağına aktarıldı.</p>
+        <a href="https://bstats.org/" target="_blank" class="bstats-link-btn">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Durumu Görmek İçin Tıklayınız
+        </a>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
