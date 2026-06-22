@@ -198,3 +198,19 @@ body {
     margin-top: 5px;
     color: #444;
 }
+/* Canlı Spark Performans Paneli */
+.spark-live-box {
+    margin-top: 25px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: left;
+}
+.spark-live-box h3 {
+    color: #3498db;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.loading-text {
+    color: #f1c40f;
+    font-style: italic;
+}
